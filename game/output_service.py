@@ -1,6 +1,12 @@
 import sys
 from game import constants
 import pyray
+from game.hero import Hero
+from game.horizontal_door import HDoor
+from game.verticle_door import VDoor
+from game.locked_door import LockedDoor
+from game.horizontal_wall import HWall
+from game.verticle_wall import VWall
 
 class OutputService:
     """Outputs the game state. The responsibility of the class of objects is to draw the game state on the terminal. 
@@ -34,19 +40,19 @@ class OutputService:
             self (OutputService): An instance of OutputService.
         """ 
         pyray.begin_drawing()
-        pyray.clear_background(pyray.WHITE)
+        pyray.clear_background(pyray.BROWN)
 
     def draw_box(self, x, y, width, height):
         """
         Draws at rectangular box with the provided specifications.
         """
-        pyray.draw_rectangle(x, y, width, height, pyray.BLUE)
+        pyray.draw_rectangle(x, y, width, height, pyray.DARKPURPLE)
 
     def draw_text(self, x, y, text, is_dark_text):
         """
         Outputs the provided text at the desired location.
         """
-        color = pyray.WHITE
+        color = pyray.BLACK
 
         if is_dark_text:
             color = pyray.BLACK

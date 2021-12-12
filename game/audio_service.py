@@ -29,6 +29,7 @@ class AudioService:
 
         sound = self._sounds[filename]
         pyray.play_sound(sound)
+        
 
     def start_audio(self):
         """

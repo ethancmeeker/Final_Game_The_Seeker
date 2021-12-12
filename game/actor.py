@@ -1,5 +1,6 @@
 from game import constants
 from game.point import Point
+import pyray
 
 class Actor:
     """A visible, moveable thing that participates in the game. The responsibility of Actor is to keep track of its appearance, position 
@@ -24,11 +25,26 @@ class Actor:
             self (Actor): an instance of Actor.
         """
         self._text = ""
-        self._position = Point(0, 0)
+        self._position = Point(900, 900)
         self._velocity = Point(0, 0)
         self._width = 0
         self._height = 0
         self._image = ""
+        self._color = pyray.BLUE
+        self._description = ""
+
+
+    def get_description(self):
+        return self._description
+
+    def set_description(self, description):
+        self._description = description
+
+    def get_color(self):
+        return self._color
+
+    def set_color(self, color):
+        self._color = color    
 
     def get_width(self):
         return self._width
@@ -83,7 +99,7 @@ class Actor:
         return self._text
 
     def set_text(self, text):
-        self._text = text;
+        self._text = text
 
     def get_velocity(self):
         """Gets the actor's speed and direction.

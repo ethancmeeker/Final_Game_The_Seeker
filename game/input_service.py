@@ -35,19 +35,15 @@ class InputService:
 
         if self.is_left_pressed():
             dx = -1
-            time.sleep(.3)
         
         if self.is_right_pressed():
             dx = 1
-            time.sleep(.3)
         
         if self.is_up_pressed():
             dy = -1
-            time.sleep(.3)
         
         if self.is_down_pressed():
             dy = 1
-            time.sleep(.3)
 
         direction = Point(dx, dy)
         return direction
